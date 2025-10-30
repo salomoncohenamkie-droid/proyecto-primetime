@@ -28,7 +28,7 @@ def button(surface):
     else:  
         pygame.draw.rect(  
             surface,  
-            color="black",  
+            color="blue",  
             rect=rect_coordinates,  
             width=0,  
             border_radius=10  
