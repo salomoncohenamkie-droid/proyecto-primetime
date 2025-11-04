@@ -40,7 +40,7 @@ if __name__ == "__main__":
     screen = pygame.display.set_mode((1280, 720))  
     clock = pygame.time.Clock()  
     running = True  
-    color = "red"  
+    color = "orange"  
       
     while running:  
         for event in pygame.event.get():  
