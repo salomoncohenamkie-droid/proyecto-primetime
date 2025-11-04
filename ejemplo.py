@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+low# -*- coding: utf-8 -*-
 """
 Created on Tue Oct 28 10:19:57 2025
 
@@ -40,7 +40,7 @@ if __name__ == "__main__":
     screen = pygame.display.set_mode((1280, 720))  
     clock = pygame.time.Clock()  
     running = True  
-    color = "goldenrod4"  
+    color = "yellow"  
       
     while running:  
         for event in pygame.event.get():  
