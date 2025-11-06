@@ -1,4 +1,4 @@
-low# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """
 Created on Tue Oct 28 10:19:57 2025
 
@@ -28,7 +28,7 @@ def button(surface):
     else:  
         pygame.draw.rect(  
             surface,  
-            color="gray",  
+            color="blue",  
             rect=rect_coordinates,  
             width=0,  
             border_radius=10  
@@ -40,9 +40,7 @@ if __name__ == "__main__":
     screen = pygame.display.set_mode((1280, 720))  
     clock = pygame.time.Clock()  
     running = True  
-
-    color = "orange"  
-
+    color = "goldenrod4"  
       
     while running:  
         for event in pygame.event.get():  
