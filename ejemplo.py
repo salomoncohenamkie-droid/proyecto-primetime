@@ -23,5 +23,5 @@ import pygame
 """
 
 
-with open(datos):
+with open(datos) as archivo: 
     
