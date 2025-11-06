@@ -4,6 +4,7 @@ Created on Thu Nov  6 09:26:55 2025
 
 @author: 260987
 """
+import json
 """
 #   Permite agregar instituciones.
 #   Permite agregar estudiantes dentro de las instituciones.
