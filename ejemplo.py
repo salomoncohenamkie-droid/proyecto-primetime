@@ -19,3 +19,7 @@ Created on Thu Nov  6 09:26:55 2025
 -   Tiene una interfaz para cada actividad.
 -   Gestiona correctamente entrada de datos incorrectos.
 """
+
+
+with open(datos):
+    
