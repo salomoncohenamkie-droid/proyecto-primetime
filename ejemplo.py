@@ -22,6 +22,14 @@ import pygame
 -   Gestiona correctamente entrada de datos incorrectos.
 """
 
+def guardar_informacion(info):
+    with open("archivo","w") as f:
+        f.write(json.dumps(info))
 
-with open(datos) as archivo: 
-    pass
+def cargar_informacion():
+    with open ("archivo","r") as f:
+        return json.loads(f.read())
+
+info = {"IBERO": {"Salomon": 1}}
+info = {"Anahuac": {"David": 1}}
+info = {"Tecnologico de Monterrey":{"Pulver": 1}}
