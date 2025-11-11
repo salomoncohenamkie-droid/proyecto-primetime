@@ -24,4 +24,4 @@ import pygame
 
 
 with open(datos) as archivo: 
-    
+    pass
