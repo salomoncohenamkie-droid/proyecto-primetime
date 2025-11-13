@@ -7,11 +7,11 @@ Created on Thu Nov  6 09:26:55 2025
 import json
 import pygame
 """
-#   Permite agregar instituciones.
-#   Permite agregar estudiantes dentro de las instituciones.
-#   Permite agregar materias para cada institución
-#   Permite guardar los criterios para calificar la materia.
-#   Advierte si la ponderación es diferente de 100%
+#   Permite agregar instituciones. ✅ 
+#   Permite agregar estudiantes dentro de las instituciones.✅ 
+#   Permite agregar materias para cada institución ✅ 
+#   Permite guardar los criterios para calificar la materia.✅ 
+#   Advierte si la ponderación es diferente de 100%✅ 
     -   Si la calificación ponderada es mayor a 10, la calificación es 10.
 -   Guarda las materias que ya se le dieron al programa.
 -   Calcula la calificación por materia.
@@ -43,18 +43,27 @@ def calcular_calificacion_final_materia(parciales, porcentajes):
     for c in parciales.values():
         if not es_calificacion_valida(c):
             raise ValueError(f"calificación {c} en {parciales} es inválida")
+            pass
     for p in porcentajes.values():
         if not es_porcentaje_valido(p):
             raise ValueError(f"porcentaje inexistente {p}")
+            pass
     if not parciales.keys() == porcentajes.keys():
         raise ValueError("elementos de los porcentajes no coinciden con las calificaciones")
-    
+        pass
     calificacion_final=0
     for k in parciales.keys():
         calificacion_final = calificacion_final + parciales[k]*porcentajes[k]
-    return calificacion_final / 100
+    return min(calificacion_final / 100 , 10)
             
 
-
+if __name__ == "__main__":
+    assert calcular_calificacion_final_materia({"examen":10, "tarea": 8, "proyecto": 9},{"examen":40, "tarea": 20, "proyecto": 40} ) == 9.2
+    try:
+        calcular_calificacion_final_materia({"prácticas":10, "entregas": 8, "presentacion": 9},{"examen":40, "tarea": 20, "proyecto": 40} )
+        raise EOFError("Debería lanzar un error")
+    except ValueError:
+        pass
+    #assert calcular_calificacion_final_materia(parciales, porcentajes) == 11.6
 
     
