@@ -33,3 +33,28 @@ def cargar_informacion():
 info = {"IBERO": {"Salomon": 1}}
 info = {"Anahuac": {"David": 1}}
 info = {"Tecnologico de Monterrey":{"Pulver": 1}}
+
+def es_calificacion_valida(calificación):
+    return 0 <= calificación and calificación <= 10
+def es_porcentaje_valido(porcentaje):
+    return 0 <= porcentaje and porcentaje <= 100
+
+def calcular_calificacion_final_materia(parciales, porcentajes):
+    for c in parciales.values():
+        if not es_calificacion_valida(c):
+            raise ValueError(f"calificación {c} en {parciales} es inválida")
+    for p in porcentajes.values():
+        if not es_porcentaje_valido(p):
+            raise ValueError(f"porcentaje inexistente {p}")
+    if not parciales.keys() == porcentajes.keys():
+        raise ValueError("elementos de los porcentajes no coinciden con las calificaciones")
+    
+    calificacion_final=0
+    for k in parciales.keys():
+        calificacion_final = calificacion_final + parciales[k]*porcentajes[k]
+    return calificacion_final / 100
+            
+
+
+
+    
