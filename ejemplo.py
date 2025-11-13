@@ -43,14 +43,14 @@ def calcular_calificacion_final_materia(parciales, porcentajes):
     for c in parciales.values():
         if not es_calificacion_valida(c):
             raise ValueError(f"calificación {c} en {parciales} es inválida")
-            pass
+
     for p in porcentajes.values():
         if not es_porcentaje_valido(p):
             raise ValueError(f"porcentaje inexistente {p}")
-            pass
+
     if not parciales.keys() == porcentajes.keys():
         raise ValueError("elementos de los porcentajes no coinciden con las calificaciones")
-        pass
+
     calificacion_final=0
     for k in parciales.keys():
         calificacion_final = calificacion_final + parciales[k]*porcentajes[k]
@@ -64,6 +64,6 @@ if __name__ == "__main__":
         raise EOFError("Debería lanzar un error")
     except ValueError:
         pass
-    #assert calcular_calificacion_final_materia(parciales, porcentajes) == 11.6
-
+    assert calcular_calificacion_final_materia({"examen":10, "tarea": 10, "proyecto": 10},{"examen":40, "tarea": 40, "proyecto": 40}) == 10
+        
     
