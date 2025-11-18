@@ -12,9 +12,9 @@ import pygame
 #   Permite agregar materias para cada institución ✅ 
 #   Permite guardar los criterios para calificar la materia.✅ 
 #   Advierte si la ponderación es diferente de 100%✅ 
-    -   Si la calificación ponderada es mayor a 10, la calificación es 10.
--   Guarda las materias que ya se le dieron al programa.
--   Calcula la calificación por materia.
+    -   Si la calificación ponderada es mayor a 10, la calificación es 10. ✅
+-   Guarda las materias que ya se le dieron al programa. ✅
+-   Calcula la calificación por materia. ✅
 -   Calcula la calificación global.
 -   Calcula la calificación máxima con las entregas hasta el momento.
 -   Te dice qué necesitas sacar en una materia para llegar a tu calificación objetivo.
@@ -57,6 +57,27 @@ def calcular_calificacion_final_materia(parciales, porcentajes):
     return min(calificacion_final / 100 , 10)
             
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 if __name__ == "__main__":
     assert calcular_calificacion_final_materia({"examen":10, "tarea": 8, "proyecto": 9},{"examen":40, "tarea": 20, "proyecto": 40} ) == 9.2
     try:
@@ -65,5 +86,33 @@ if __name__ == "__main__":
     except ValueError:
         pass
     assert calcular_calificacion_final_materia({"examen":10, "tarea": 10, "proyecto": 10},{"examen":40, "tarea": 40, "proyecto": 40}) == 10
-        
+    guardar_informacion(info)
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
