@@ -56,13 +56,8 @@ def calcular_calificacion_final_materia(parciales, porcentajes):
         calificacion_final = calificacion_final + parciales[k]*porcentajes[k]
     return min(calificacion_final / 100 , 10)
             
-
-
-
-
-
-
-
+def calcular_calificacion_global(finales):
+    sum(finales.values())
 
 
 
@@ -86,9 +81,8 @@ if __name__ == "__main__":
     except ValueError:
         pass
     assert calcular_calificacion_final_materia({"examen":10, "tarea": 10, "proyecto": 10},{"examen":40, "tarea": 40, "proyecto": 40}) == 10
-    guardar_informacion(info)
-    
-    
+    assert calcular_calificacion_global({"TEA":9, "TIU":8, "Intro a Ing.":9, "Física 1":8, "Lab. Física 1":7, "Cálculo":9, "Química":5}) - 7.8571428571 < 0.0000001
+
     
     
     
