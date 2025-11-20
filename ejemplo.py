@@ -62,6 +62,8 @@ def calcular_calificacion_global(finales):
     return sum(finales.values()) / len(finales)
 
 
+def calcular_calificacion_maxima(parciales, porcentajes):
+    pass
 
 
 
@@ -75,7 +77,10 @@ def calcular_calificacion_global(finales):
 
 
 if __name__ == "__main__":
-    assert calcular_calificacion_final_materia({"examen":10, "tarea": 8, "proyecto": 9},{"examen":40, "tarea": 20, "proyecto": 40} ) == 9.2
+    assert calcular_calificacion_final_materia(
+        {"examen":10, "tarea": 8, "proyecto": 9},
+        {"examen":40, "tarea": 20, "proyecto": 40}
+    ) == 9.2
     try:
         calcular_calificacion_final_materia({"prácticas":10, "entregas": 8, "presentacion": 9},{"examen":40, "tarea": 20, "proyecto": 40} )
         raise EOFError("Debería lanzar un error")
@@ -83,6 +88,10 @@ if __name__ == "__main__":
         pass
     assert calcular_calificacion_final_materia({"examen":10, "tarea": 10, "proyecto": 10},{"examen":40, "tarea": 40, "proyecto": 40}) == 10
     assert calcular_calificacion_global({"TEA":9, "TIU":8, "Intro a Ing.":9, "Física 1":8, "Lab. Física 1":7, "Cálculo":9, "Química":5}) - 7.8571428571 < 0.0000001
+    assert calcular_calificacion_maxima(
+        {"tarea": 8, "proyecto": 9},
+        {"examen":40, "tarea": 20, "proyecto": 40}
+    ) == 9.2, "No sabe calcular calif max"
 
     
     
