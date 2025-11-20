@@ -15,7 +15,7 @@ import pygame
     -   Si la calificación ponderada es mayor a 10, la calificación es 10. ✅
 -   Guarda las materias que ya se le dieron al programa. ✅
 -   Calcula la calificación por materia. ✅
--   Calcula la calificación global.
+-   Calcula la calificación global.✅
 -   Calcula la calificación máxima con las entregas hasta el momento.
 -   Te dice qué necesitas sacar en una materia para llegar a tu calificación objetivo.
 -   Tiene una interfaz para cada actividad.
@@ -57,7 +57,9 @@ def calcular_calificacion_final_materia(parciales, porcentajes):
     return min(calificacion_final / 100 , 10)
             
 def calcular_calificacion_global(finales):
-    sum(finales.values())
+    if not finales:
+        return 0
+    return sum(finales.values()) / len(finales)
 
 
 
